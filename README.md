@@ -8,13 +8,15 @@
 [![Linux Passing](https://img.shields.io/travis/Availity/metalsmith-prism.svg?style=flat-square&label=linux)](https://travis-ci.org/Availity/metalsmith-prism)
 [![Windows Passing](https://img.shields.io/appveyor/ci/robmcguinness/metalsmith-prism.svg?style=flat-square&label=windows)](https://ci.appveyor.com/project/robmcguinness/metalsmith-prism)
 
+The main difference between this package and [Availity/metalsmith-prism](https://github.com/Availity/metalsmith-prism) is the support for line numbers, without any browser-side JavaScript. It's a bit of a hack, so use at your own risk.
+
 ## Quickstart
 
 + Install **metalsmith-prism**
 
 >
 ```bash
-  npm install metalsmith-prism --save-dev
+  npm install @clarle/metalsmith-prism --save-dev
 ```
 
 + Add language definition to code block
@@ -29,7 +31,7 @@
 >
 ```js
 var metalsmith = require('metalsmith');
-var metalsmithPrism = require('metalsmith-prism');
+var metalsmithPrism = require('@clarle/metalsmith-prism');
 metalsmith(__dirname)
   .use(metalsmithPrism())
   .build();
@@ -41,7 +43,7 @@ metalsmith(__dirname)
 ```js
 var metalsmith = require('metalsmith');
 var markdown = require('metalsmith-markdown');
-var metalsmithPrism = require('metalsmith-prism');
+var metalsmithPrism = require('@clarle/metalsmith-prism');
 metalsmith(__dirname)
   // Custom langPrefix option needed as markdown uses 'lang-' by default:
   .use(markdown( { langPrefix: 'language-' } ))
